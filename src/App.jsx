@@ -1,34 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Flex, HStack } from "@chakra-ui/react"
+import NasabahTable from "./components/NasabahTable"
+import NasabahForm from "./components/Form"
+import GetNasabahButton from "./components/SearchInput"
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Flex justifyContent="center" flexDir="column" minHeight="100vh" minWidth="full" p="25px" bg="white">
+      <HStack justifyContent="space-between">
+        <NasabahForm />
+        <GetNasabahButton />
+      </HStack>
+      <NasabahTable />
+    </Flex>
   )
 }
 
